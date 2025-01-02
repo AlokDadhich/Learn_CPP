@@ -2,21 +2,22 @@
 #include <iostream>
 
 int main() {
+    // Initialize topics
+    auto topics = initializeTopics();
+
+    // Display available topics
+    std::cout << "Available Topics:\n";
+    for (const auto& topic : topics) {
+        std::cout << "- " << topic.first << "\n";
+    }
+
+    // Get user input
     std::string selectedTopic;
-    char choice = 'y';
+    std::cout << "\nEnter a topic to learn about: ";
+    std::getline(std::cin, selectedTopic);
 
-    do {
-        displayTopics();
-        std::cin.ignore();
-        std::getline(std::cin, selectedTopic);
+    // Show selected topic details
+    showTopicDetails(topics, selectedTopic);
 
-        showTopicDetails(selectedTopic);
-
-        std::cout << "\nWould you like to explore another topic? (y/n): ";
-        std::cin >> choice;
-
-    } while (choice == 'y' || choice == 'Y');
-
-    std::cout << "Thank you for learning C++!\n";
     return 0;
 }
