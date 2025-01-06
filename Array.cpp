@@ -1,14 +1,14 @@
 #include "Learn_CPP.h"
 
-// Function to initialize topics
-std::unordered_map<std::string, Topic> initializeTopics() {
+std::unordered_map<std::string, Topic> getArrayTopics() {
     std::unordered_map<std::string, Topic> topics;
 
-    // Adding Array Topic
     topics["Array"] = {
-        "An array is a collection of elements of the same type stored in contiguous memory locations. Arrays allow random access using indices.",
+        "Array",
+        R"(An array is a collection of items stored at contiguous memory locations. 
+It can store multiple values of the same type in a single variable, instead of declaring separate variables for each value.)",
         R"(Syntax:
-dataType arrayName[arraySize];
+int arr[size];
 Example:
 int arr[5] = {1, 2, 3, 4, 5};)",
         R"(Example Code:
@@ -18,7 +18,7 @@ using namespace std;
 int main() {
     int arr[5] = {1, 2, 3, 4, 5};
     for (int i = 0; i < 5; i++) {
-        cout << "Element " << i << ": " << arr[i] << endl;
+        cout << arr[i] << " ";
     }
     return 0;
 })"

@@ -5,17 +5,23 @@
 #include <unordered_map>
 #include <string>
 
-// Define the Topic structure
+// Topic structure
 struct Topic {
+    std::string name;
     std::string theory;
     std::string syntax;
-    std::string exampleCode;
+    std::string example;
 };
 
-// Function declaration to initialize topics
-std::unordered_map<std::string, Topic> initializeTopics();
+// Declare topic-specific functions
+std::unordered_map<std::string, Topic> getArrayTopics();
+std::unordered_map<std::string, Topic> getFunctionTopics();
+std::unordered_map<std::string, Topic> getPointerTopics();
 
-// Function declaration to show details of a topic
+// Combine all topics
+std::unordered_map<std::string, Topic> getAllTopics();
+
+// Display topic details
 void showTopicDetails(const std::unordered_map<std::string, Topic>& topics, const std::string& topicName);
 
-#endif // LEARN_CPP_H
+#endif

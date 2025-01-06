@@ -1,15 +1,15 @@
 #include "Learn_CPP.h"
 
-// Function to initialize topics
-std::unordered_map<std::string, Topic> initializeTopics() {
+std::unordered_map<std::string, Topic> getFunctionTopics() {
     std::unordered_map<std::string, Topic> topics;
 
-    // Adding Function Topic
     topics["Functions"] = {
-        "Functions are blocks of code designed to perform a specific task. They help in modular programming, making code reusable and easier to understand.",
+        "Functions",
+        R"(Functions are blocks of code that perform a specific task. They allow for modularity and code reuse.
+A function typically includes a name, return type, parameters (optional), and a body.)",
         R"(Syntax:
-returnType functionName(parameters) {
-    // Function body
+return_type function_name(parameters) {
+    // body of the function
 }
 Example:
 int add(int a, int b) {
@@ -24,8 +24,7 @@ int add(int a, int b) {
 }
 
 int main() {
-    int x = 5, y = 10;
-    cout << "Sum: " << add(x, y) << endl;
+    cout << "Sum: " << add(3, 4) << endl;
     return 0;
 })"
     };
